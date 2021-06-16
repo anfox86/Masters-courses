@@ -1,0 +1,78 @@
+---
+title: "Week 10 - Section 2"
+author: "Andrea Fox"
+date: "10/30/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(devtools)
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+```
+
+# Section 2 – Week 10 – Cleaning Your Data and Exploratory Data Analysis
+*1. Data importing and cleaning steps are explained in the text and in the DataCamp exercises (tell me why you are doing the data cleaning activities that you perform) and follow a logical process.*
+
+*2. With a clean dataset, show what the final data set looks like. However, do not print off a data frame with 200+ rows; show me the data in the most condensed form possible.*
+
+*3. What do you not know how to do right now that you need to learn to import and cleanup your dataset?* 
+
+# Data Source:
+https://data.kcmo.org/Crime/KCPD-Crime-Data-2018/dmjw-d28i
+
+##  1 Data Importing and Cleaning
+```{r Data Clean}
+
+setwd("C:/Users/Andrea Fox/OneDrive/Documents/R/DSC520 Statistics Using R")
+
+#Import the raw data and create initial dataframe
+kcpd.18 <- read.csv("KCPD_Crime_Data_2018.csv", header = TRUE)
+
+#Looking at whether my data is a dataframe, checking column names, glimpsing data, and checking summary
+class(kcpd.18)
+dim(kcpd.18)
+names(kcpd.18)
+glimpse(kcpd.18)
+summary(kcpd.18)
+
+#Need to find out if I have an NAs
+any(is.na(kcpd.18))
+sum(is.na(kcpd.18))
+summary(kcpd.18)
+complete.cases(kcpd.18)
+
+#There are quite a few NA's in my entire dataset. At this point I want to create a subset of the data to narrow down the NA problem.
+names(kcpd.18)
+myvars <- c('Report_No', 'Reported_Date', 'Reported_Time', 'Offense', 'Description', 'Zip.Code', 'Area', 'Firearm.Used.Flag')
+main_kcpd18 <- kcpd.18[,myvars]
+summary(main_kcpd18)
+
+#Remove NA's from new dataset
+na.omit(main_kcpd18)
+summary(main_kcpd18)
+
+#Offense only had codes while the Description column had the type of crime, but the data was all over the place. Going to unite into one column named crime.
+main2_kcpd18 <- unite(main_kcpd18, Crime, Offense, Description)
+```
+
+
+## 2 Data Display
+
+```{r Data Display}
+head(main2_kcpd18)
+```
+
+## 3 What's next?
+
+>I ran into a lot of problems when cleaning the data with the biggest of not knowing really where to start. I decided to go through Cleaning Data Using R on DataCamp to see if I could pick up a few things, which really helped me follow a list of ideas. I had an exceptionally hard time figuring out the correct way to create my main_kcpd18 dataset from the original. It kept telling me I had an undefined column. Turns out I had originally combined Offense and Description before creating the subset and it didn't recognize Crime. So I deleted that out and moved it underneath creating another dataset of main2_kcpd18. For now this looks to be the bulk of what I'm going to work with to answer the majority of my questions.
+
+>Things I don't know as of yet:
+>Will I use the other columns like Age or Sex?
+>Did I clean everything or will I experience issues?
+>I tried looking at outliers, but most of my data is not numerical, so not sure if that will be an issue here
+
+
+
