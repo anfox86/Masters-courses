@@ -1,0 +1,32 @@
+---
+title: "Introduction to Machine Learning"
+author: "Andrea Fox"
+date: "10/25/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Binary Classifier Data CSV
+
+After running nearest neighbor for each k value (3,5,10,15,20,25) I received the following accuracy results from the binary.csv:
+1. knn3 - 97.6%
+2. knn5 - 97.8%
+3. knn10 - 97.8%
+4. knn15 - 97.2%
+5. knn20 - 97.4%
+6. knn25 - 97.4%
+
+## Trinary Classifier Data CSV
+
+After running nearest neighbor each k value (3,5,10,15,20,25) I recieved the following accuracy results for my trinary.csv:
+
+1.knn3 - 92.7%
+2.knn5 - 92.5%
+3.knn10 - 89.5%
+4.knn15 - 87.4%
+5.knn20 - 87.4%
+6.knn25 - 87.8%
+
