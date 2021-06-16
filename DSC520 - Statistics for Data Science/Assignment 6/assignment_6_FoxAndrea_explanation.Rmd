@@ -1,0 +1,18 @@
+---
+title: "Interpretations of GSS Data"
+author: "Andrea Fox"
+date: "10/6/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part 1
+
+After careful evaluation of the different equations used in Part 1 including correltaion, correlation coefficient, and partial correlation to name a few it looks like there is not much of a relationship between the two variables. I went back to add some jitter into the original scatterplot and it looked much messier than my original where it looked like I had straight lines of data across from the children. Now I'm seeing that I have more data than I originally thought. However, if I was looking at just the scatter plot I might have assumed there was a relationship because there is a heavy condensed area among the lower number of siblings to children ratio. Yet the correlation showed there really wasn't much of a relationship between the two, so my overall assumpation is my hypothesis is incorrect.
+
+## Part 2
+
+In part 2 we looked at the regression piece of the data. This gave me a better output in whether the data was significant or not. I found that only 4% in the number of siblings a person has can account for the number of children they have. This means there really isn't a strong relationship between the two variables at all. 
