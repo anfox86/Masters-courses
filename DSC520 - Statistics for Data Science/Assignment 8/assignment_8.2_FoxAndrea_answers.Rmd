@@ -1,0 +1,17 @@
+---
+title: "Fit Logistic Regression Model to Previous Dataset"
+author: "Andrea Fox"
+date: "10/20/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Answers
+
+8.2 A - The accuracy for 8.2 A  for me was 58%. 
+8.2 B - The accuracy I got for nearest neighbor (KNN) was 97.8% vs the 58% I got just using logistic regression. 
+8.2 C - The reason KNN was higher than logistic regression is because it's two different models. The data came from the same place, but how the problem is solved is different meaning results will vary.
+

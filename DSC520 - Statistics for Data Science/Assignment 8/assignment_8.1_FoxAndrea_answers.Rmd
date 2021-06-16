@@ -1,0 +1,18 @@
+---
+title: "Thoracic Surgery Binary Dataset - 8.1 Assignment"
+author: "Andrea Fox"
+date: "10/16/2019"
+output: html_document
+---
+
+
+## Variable Significance
+
+Originally, I ran glm(Risk1Yr ~ . , data = thoracic.data, family = 'binomial') to pull the logistic regression and figure out which variables were significant. In order to determine which variables were the most significant from my logical regression I used the p values. By looking for the p values that were below 0.05 I was able to determine that Pre9t, Pre14OC14, Pre17t, and Pre30t were all significant. These variables are: Pre9t - Dyspnoe before surgery, Pre14OC14 - size of original tumor (largest), Pre17t - Type 2 DM - diabetes mellitus, and Pre30t - Smoking.
+  
+## Accuracy
+
+After running my variables through confusion matrix and then looking at accuracy PRE9 and PRE17 were the most accurate at 93% and 92%. The others failed miserably. 
+
+
+
